@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PaintAndInso
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 70b01321d24d9bc4bba1ae82dabf2365, type: 2}
-  carbonFootprint: 0
-  materialName: Paint&Inso
+  carbonFootprint: 280000
+  materialName: Plaster

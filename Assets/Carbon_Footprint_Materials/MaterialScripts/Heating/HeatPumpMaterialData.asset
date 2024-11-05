@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6edb4644aa41e6d428242038f64b077f, type: 3}
-  m_Name: ConcreteMaterialData
+  m_Name: HeatPumpMaterialData
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: f2dc7625db4783e49bb661a6ec9a195d, type: 2}
-  carbonFootprint: 0
-  materialName: Concrete
+  material: {fileID: 0}
+  carbonFootprint: 300000
+  materialName: Pump

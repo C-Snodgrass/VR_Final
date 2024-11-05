@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BrickMaterialData
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 36a26449dd2dc6548bff990b03e5b405, type: 2}
-  carbonFootprint: 0
+  carbonFootprint: 250000
   materialName: Bricks

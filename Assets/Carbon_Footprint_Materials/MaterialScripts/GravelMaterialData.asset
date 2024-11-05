@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GravelMaterialData
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 9d5067e0de41f7f45b8d1835e0d4cb7a, type: 2}
-  carbonFootprint: 0
+  carbonFootprint: 7500
   materialName: Gravel

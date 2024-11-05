@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HempcreteMaterialData
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 604abb38ea6e3ff4c983e61e8ca107f1, type: 2}
-  carbonFootprint: 0
+  carbonFootprint: 60000
   materialName: Hempcrete

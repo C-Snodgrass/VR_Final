@@ -6,40 +6,38 @@ public class WallInterior : MonoBehaviour
     public MaterialData[] wallMaterials;
 
     // Current index of the active material
-    private int currentMaterialIndex = 0;
+    public int currentMaterialIndex = 0;
 
     // Reference to the Renderer component
-    private Renderer wallRenderer;
-
-    public float carbonFootprint;
+    private Renderer[] renderers;
 
     private void Awake()
     {
         // Get the Renderer component attached to this GameObject
-        wallRenderer = GetComponent<Renderer>();
+        renderers = GetComponentsInChildren<Renderer>();
 
         // Set the initial material
         if (wallMaterials.Length > 0)
         {
             // get the mat & carbon footprint from the array of material data
-            wallRenderer.material = wallMaterials[currentMaterialIndex].material;
-            carbonFootprint = wallMaterials[currentMaterialIndex].carbonFootprint;
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                renderers[i].material = wallMaterials[currentMaterialIndex].material;
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check if the poke gesture is detected
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger)) // Change to the appropriate button for your poke gesture
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            // Call your poke method
-            OnPoke();
+            CycleMaterial();
         }
     }
 
     // Method to handle poke interaction
-    private void OnPoke()
+    public void OnPoke()
     {
         Debug.Log("Poke gesture detected!");
 
@@ -50,19 +48,20 @@ public class WallInterior : MonoBehaviour
     private void CycleMaterial()
     {
         // Increment the current material index
-        currentMaterialIndex++;
-
-        // Loop back to the first material if we've reached the end
-        if (currentMaterialIndex >= wallMaterials.Length)
-        {
-            currentMaterialIndex = 0;
-        }
+        currentMaterialIndex = (currentMaterialIndex + 1) % wallMaterials.Length;
 
         // Update the wall's material
-        wallRenderer.material = wallMaterials[currentMaterialIndex].material;
-        carbonFootprint= wallMaterials[currentMaterialIndex].carbonFootprint;
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i].material = wallMaterials[currentMaterialIndex].material;
+        }
 
         // Log the change
         Debug.Log($"Material changed to: {wallMaterials[currentMaterialIndex].name}");
+    }
+
+    public MaterialData GetCurrentMaterial()
+    {
+        return wallMaterials[currentMaterialIndex];
     }
 }
