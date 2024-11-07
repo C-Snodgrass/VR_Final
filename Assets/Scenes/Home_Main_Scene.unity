@@ -8245,8 +8245,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8912064f3b894cd48af7cc27383b613f, type: 2}
   objects:
   - {fileID: 781377407}
-  - {fileID: 6677366385006162439}
   - {fileID: 2109215491}
+  - {fileID: 3509089495652511533}
   currentMaterialIndex: 0
 --- !u!1001 &606320394
 PrefabInstance:
