@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Vehicles : MonoBehaviour
-{ 
+{
     // Array of materials to cycle through
     public MaterialData[] wallMaterials;
 
@@ -27,7 +27,7 @@ public class Vehicles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Semicolon))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             CycleMaterial();
         }
